@@ -1,72 +1,19 @@
 import { Code, Smartphone, Globe, Database, Brain, ArrowRight } from "lucide-react"
 import LogoLoop from "./LogoLoop"
+import { projects } from "../data/projects"
 
-const projects = [
-    {
-        id: "01",
-        title: "AI Routine Planner",
-        role: "Flutter Developer",
-        description: "Flutter-based productivity app integrating AI-driven routine coaching. Added AI Coach for habit tracking.",
-        tags: ["Flutter", "AI", "Mobile"],
-        icon: Smartphone,
-        color: "text-blue-400",
-        borderColor: "border-blue-400",
-        bgGradient: "from-blue-500/20 to-transparent"
-    },
-    {
-        id: "02",
-        title: "MeaDocs App",
-        role: "Full Stack Developer",
-        description: "AI Photo Search App. Implemented local AI-powered photo search using on-device ML indexing.",
-        tags: ["Electron", "Flutter", "ML"],
-        icon: Database,
-        color: "text-purple-400",
-        borderColor: "border-purple-400",
-        bgGradient: "from-purple-500/20 to-transparent"
-    },
-    {
-        id: "03",
-        title: "Saarni",
-        role: "Python Developer",
-        description: "AI Train Traffic Management System. Automated scheduling and platform-allocation system.",
-        tags: ["Python", "Optimization"],
-        icon: Code,
-        color: "text-pink-400",
-        borderColor: "border-pink-400",
-        bgGradient: "from-pink-500/20 to-transparent"
-    },
-    {
-        id: "04",
-        title: "AayushCare",
-        role: "Web Developer",
-        description: "AI Healthcare Assistance Web App. Integrated NLP-based symptom analysis for patient interaction.",
-        tags: ["Flask", "JS", "NLP"],
-        icon: Globe,
-        color: "text-emerald-400",
-        borderColor: "border-emerald-400",
-        bgGradient: "from-emerald-500/20 to-transparent"
-    },
-    {
-        id: "05",
-        title: "Fake News Detection",
-        role: "ML Engineer",
-        description: "Developed multilingual text classification pipeline with LLM-based reasoning.",
-        tags: ["LLM", "Transformers"],
-        icon: Brain,
-        color: "text-orange-400",
-        borderColor: "border-orange-400",
-        bgGradient: "from-orange-500/20 to-transparent"
-    }
-]
 
 export const ProjectFlowchart = () => {
+    const visibleProjects = projects.slice(0, 5)
+
     return (
         <div className="relative w-full py-20 overflow-hidden">
+
             {/* Central Line - Absolute background for the whole section */}
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 z-0" />
 
             <LogoLoop
-                logos={projects}
+                logos={visibleProjects}
                 speed={50} // Adjust speed as needed
                 direction="left"
                 logoHeight={600} // Needs to be tall enough for the alternating layout
